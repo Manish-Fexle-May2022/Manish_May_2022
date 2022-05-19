@@ -8,5 +8,6 @@ cout<<"hello world!"
 
 
     cout << "\nAfter swapping." << endl;
+    count<<"";
 return 0;
 }
