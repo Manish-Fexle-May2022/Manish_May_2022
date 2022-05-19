@@ -4,7 +4,14 @@ int main()
 {
 cout<<"hello world!"
 
+
+
+    cout << "\nAfter swapping." << endl;
+    count<<"";
+return 0;
 cout<<"Finally Result";
+cout<<"Ship";
  return 0 ;
+
 
 }
