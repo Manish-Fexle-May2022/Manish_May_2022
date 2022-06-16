@@ -5,8 +5,30 @@
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
+        <members>Contact.Pan_Card__c</members>
+        <members>Student__c.Year_Of_Class__c</members>
+		<members>Lead.Account__c</members>
+        <name>CustomField</name>
     </types>
-    <version>54.0</version>
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+	<types>
+        <members>*</members>
+        <name>Layout</name>
+    </types>
+	<types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+	<types>
+        <members>*</members>
+        <name>WorkFlow</name>
+    </types>
+    <version>53.0</version>
 </Package>
