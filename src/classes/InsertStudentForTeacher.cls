@@ -31,17 +31,17 @@ public class InsertStudentForTeacher {
     student.Pending_Overall_Amount__c=30;    
     insert student; 
 	
-	//student semester details
+    //student semester details
 	
-	student.Subjects_in_which_Back__c='Mathematics';
-	student.X1st_Sem_Percentage__c=72.90;
-	student.X1st_Sem_Back__c=true;
-	student.X2nd_Sem_Back__c=true;
-	student.X2nd_Sem_Percentage__c=80;
-	student.X3rd_Sem_Back__c=false;
-	student.X3nd_Sem_Percentage__c=89.85;
-	student.X4th_Sem_Back__c=ture;
-	student.X4th_Sem_Percentage__c=67;
-    system.debug('inserted record id:::'+ student.id );    
+     student.Subjects_in_which_Back__c='Mathematics';
+     student.X1st_Sem_Percentage__c=72.90;
+     student.X1st_Sem_Back__c=true;
+     student.X2nd_Sem_Back__c=true;
+     student.X2nd_Sem_Percentage__c=80;
+     student.X3rd_Sem_Back__c=false;
+     student.X3nd_Sem_Percentage__c=89.85;
+     student.X4th_Sem_Back__c=ture;
+     student.X4th_Sem_Percentage__c=67;
+     system.debug('inserted record id:::'+ student.id );    
     }
 }
