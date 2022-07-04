@@ -18,14 +18,14 @@ public with sharing class Amazone {
         public ProcessPurchaseOrder(){
             PurchaseOrder order1 = new CustomerPurchaseOrder();
             order1.discount();
-            Processorder(order1);
+            ProcessOrder(order1);
 
             PurchaseOrder order2 = new EmployeePurchaseOrder();
             order2.discount();
-            Processorder(order2);
+            ProcessOrder(order2);
         }
 
-        public void processorder(PurchaseOrder order){
+        public void processOrder(PurchaseOrder order){
             System.debug('Check Discount:::'+ order.discount());
         }
         //Use Amazone.ProcessPurchaseOrder ac = new Amazone.ProcessPurchaseOrder(); For Execute!!!!
