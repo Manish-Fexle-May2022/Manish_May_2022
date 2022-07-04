@@ -1,35 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-   <types>
-       <members>ExpressionAndOperators</members>
-       <members>CallByValueAndReference</members>
-       <members>ConstructorClass</members>
-       <members>ControlFlow</members>
-       <members>ControlFlowStatement</members>
-       <members>MethodOverloading</members>
-       <members>MethodOverriding</members>
-       <members>PracticeOperators</members>
-       <members>DataTypesAndMethods</members>
-       <members>ListOfProduct</members>
-       <members>MapOfProduct</members>
-       <members>SetOfProduct</members>
-       <members>StudentData</members>
-       <members>PrintingPattern</members>
-       <members>HelloWorldTestClass</members>
-       <members>MyHelloWorld</members>
-       <name>ApexClass</name>
-   </types>
-   <types>
-       <members>HelloWorldTrigger</members>
-       <name>ApexTrigger</name>
-    </types>
     <types>
-	<members>Book__c</members>
-        <name>CustomTab</name>
-    </types>
-    <types>
-        <members>Book__c</members>
-	<name>CustomObject</name>
+        <members>Amazone</members>
+        <members>ClassInstanceOf</members>
+        <members>Student</members>
+        <members>SuperClass</members>
+        <members>ThisKeyword</members>
+        <name>ApexClass</name>
     </types>
     <version>53.0</version>
 </Package>
