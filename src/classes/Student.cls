@@ -11,9 +11,9 @@ public with sharing class Student {
         system.debug('Check I : '+i);
     }
 
-    public void dataRefernce(Student__c studentdata){
+    public void dataRefernce(Student__c studentData){
         for(integer  i = 0; i<10;i++){
-            studentdata.name = studentdata.name + i;
+            studentData.name = studenData.name + i;
         }
     }
 
