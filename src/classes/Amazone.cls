@@ -18,11 +18,11 @@ public with sharing class Amazone {
         public ProcessPurchaseOrder(){
             PurchaseOrder order1 = new CustomerPurchaseOrder();
             order1.discount();
-            ProcessOrder(order1);
+            processOrder(order1);
 
             PurchaseOrder order2 = new EmployeePurchaseOrder();
             order2.discount();
-            ProcessOrder(order2);
+            processOrder(order2);
         }
 
         public void processOrder(PurchaseOrder order){
