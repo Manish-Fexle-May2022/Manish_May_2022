@@ -3,22 +3,16 @@ public with sharing class CountryMaps  {
     //*******Nested Map using Country with code to get the value countries,states,cites name*********!! 
     static Map<String,Map<String, Map<String, List<String>>>> countryWithCode = new Map<String,Map<String, Map<String, List<String>>>>();
 
-    static Map<String, Map<String, List<String>>> countryMap= new Map<String, Map<String, List<String>>>();
-
     public static void mapCountry(String countrycode){
         
         //Nested Map using Country to get the states and city name
         Map<String, Map<String, List<String>>> countryMap= new Map<String, Map<String, List<String>>>();
-        
-        //we use nested dummy map to put all the countries into the countrywith code map
-        Map<String, Map<String, List<String>>> countrydummyMap = new Map<String, Map<String, List<String>>>();
-
 
         countryWithCode.put('+91',new Map<String, Map<String, List<String>>>());
         countryWithCode.put('+1',new Map<String, Map<String, List<String>>>());
 
         //************COUNTRY INDIA MAP**************!!!!
-        countrydummyMap.put('India', new  Map<String, List<String>>());
+        countryMap.put('India', new  Map<String, List<String>>());
 
         Map<String, List<String>> stateMap1 = new Map<String, List<String>>();
         stateMap1.put('Rajasthan',new List<String>());
@@ -39,15 +33,15 @@ public with sharing class CountryMaps  {
         stateMap1.get('Uttar Pradesh').addAll(upDistrictList);
         stateMap1.get('Haryana').addAll(haryanaDistrictList);
         stateMap1.get('UttraKhand').addAll(uttrakhandDistrictList);
-        countrydummyMap.get('India').putAll(stateMap1);
+        countryMap.get('India').putAll(stateMap1);
         
-        countryMap.putAll(countrydummyMap);
+        countryMap.putAll(countryMap);
         countryWithCode.get('+91').putAll(countryMap);
         //System.debug(countryWithCode.get('+91'));
-        countrydummyMap.clear();
+        countryMap.clear();
 
         //************COUNTRY UNITED STATES AMERICA MAP*************!!!
-        countrydummyMap.put('USA',new  Map<String, List<String>>());
+        countryMap.put('USA',new  Map<String, List<String>>());
         
         Map<String, List<String>> stateMap2 = new Map<String, List<String>>();
         stateMap2.put('California',new List<String>());
@@ -69,23 +63,23 @@ public with sharing class CountryMaps  {
         stateMap2.get('Florida').addAll(floridaDistrictList);
         stateMap2.get('Alaska').addAll(alaskaDistrictList);
         stateMap2.get('Utah').addAll(utahDistrictList);
-        countrydummyMap.get('USA').putAll(stateMap2);
+        countryMap.get('USA').putAll(stateMap2);
         
-        countryMap.putAll(countrydummyMap);
-        countryWithCode.get('+1').putAll(countrydummyMap);
+        countryMap.putAll(countryMap);
+        countryWithCode.get('+1').putAll(countryMap);
         //System.debug(countryWithCode.get('+1'));
-        countrydummyMap.clear();
+        countryMap.clear();
 
         System.debug(countryWithCode.get(countrycode));
     }
     
-    public static void getCountryWithLetter(String countryCode,Integer sizeOfLetter){
+    public static void getCountryWithLetter(String letterStartWith,Integer sizeOfLetter){
         // *******Map for getting coutries from the given code******!!!!
         Map<String, Map<String, List<String>>> cMap = new Map<String, Map<String, List<String>>>();
         // *******String for getting Country Name******!!!
-		String countryStartLetter = '';
+	String countryStartLetter = '';
         for(String str : countryWithCode.keySet()){
-            if(str.startsWith(countryCode)){
+            if(str.startsWith(letterStartWith)){
                 cMap = countryWithCode.get(str);
             }
         }
@@ -111,14 +105,14 @@ public with sharing class CountryMaps  {
             }
         }
         System.debug('District with Greater Integer : ');
-        List<String> greaterDistrictFormInteger = new List<String>();
+        List<String> greaterDistrictFromInteger = new List<String>();
         for(List<String> str : sMap.values()){
             for(String st :str ){
                 if( st.length() >= SizeOfLetter ){
-                    greaterDistrictFormInteger.add(st);
+                    greaterDistrictFromInteger.add(st);
                 }
             }
         }
-        System.debug(greaterDistrictFormInteger);
+        System.debug(greaterDistrictFromInteger);
     }
 }
