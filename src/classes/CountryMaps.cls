@@ -121,6 +121,6 @@ public with sharing class CountryMaps {
     }
 }
 
-/*For Excicute This Code Use  => CountryStateDistrictMap n = new CountryStateDistrictMap();
-                                 n.getCountryWithLetter('String Letter');
-                                 n.searchDistrictWithLength(Size Of Letter);             */
+/*For Excicute This Code Use  => CountryMaps n = new CountryMaps();
+                                 n.getCountryWithLetter('U');
+                                 n.searchDistrictWithLength(5);             */
