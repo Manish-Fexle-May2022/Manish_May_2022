@@ -14,7 +14,7 @@ public with sharing class CountryMaps {
         
         List<String> rajthanDistrictList = new List<String>{'Jaipur','Udaipur','Jodhpur','Ajmer','Kota','Sikar','Pali','Alwar','Bharatpur', 'Kishangarh'};
         
-        List<String> upDistrictList = new List<String>{'Sultan', 'Lucknow', 'Agra', 'Mathura','Shamli','Lucknow','Agra','Kanpur','Merrut','Rampur','Jhansi','Lalitpur','Ayodhya','Basti','Jaunpur','Prayagraj'};
+        List<String> upDistrictList = new List<String>{'Sultan', 'Lucknow', 'Mathura','Shamli','Lucknow','Agra','Kanpur','Merrut','Rampur','Jhansi','Lalitpur','Ayodhya','Basti','Jaunpur','Prayagraj'};
          
             
         //*****************Create List of District with State Of Country Switzerland***********
@@ -43,6 +43,7 @@ public with sharing class CountryMaps {
         //***************Map For District with State Of Country Switzerland
         
         Map<String,List<String>> mapOfDistrictwithStateForSwitzerland=new  Map<String,List<String>>();
+        
         mapOfDistrictwithStateForSwitzerland.put('Schwyz',schwyzDistrictList);
             
         //***************Map For District with State Of Country Usa
