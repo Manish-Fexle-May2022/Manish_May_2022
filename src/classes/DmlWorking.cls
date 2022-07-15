@@ -2,7 +2,7 @@ public with sharing class DmlWorking {
     // HOW DML WORKS ?
     public static void perfectUseOfDmlStatements() {
         List<Contact> updatedList = new List<Contact>();
-        List<Contact> conList = [Select Title , Description from Contact];
+        List<Contact> conList = [Select Title , Description from Contact LIMIT 1];
         for(Contact con : conList) {
             if (con.Title == 'CFO') {
                 con.Description = 'Newest Description';
