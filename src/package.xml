@@ -3,8 +3,9 @@
     <types>
         <members>AddingAndRetrievingDataWithDML</members>
         <members>DmlWorking</members>
-        <members>ParentChildSampleClass</members>
         <members>UseOfExternalID</members>
+		<members>QueryChildToParent</members>
+        <members>QueryParentToChild</members>
         <name>ApexClass</name>
     </types>
     <types>
