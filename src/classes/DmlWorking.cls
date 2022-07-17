@@ -41,15 +41,12 @@ DmlWorking.addingAndRetrievingData();*/
             
             ID accID = acc.ID;
             
-            Contact con = new Contact(
-                FirstName='David',
-                LastName='Mallan',
-                Phone='+12435467598',
-                AccountId=accID);
+            Contact con = new Contact(FirstName='David', LastName='Mallan', Phone='+12435467598', AccountId=accID);  
             insert con;
+            
             System.debug('Account '+acc);
             System.debug('Contact ' +con);
-        } catch(DmlException e) {
+        }catch(DmlException e) {
             System.debug('An unexpected error has occurred: ' + e.getMessage());
         }
     }
