@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>ConvertToCLA</members>
-        <members>CountryMaps</members>
+        <members>AddingAndRetrievingDataWithDML</members>
+        <members>DmlWorking</members>
+        <members>UseOfExternalID</members>
+	<members>QueryChildToParent</members>
+        <members>QueryParentToChild</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Account.MyExtID__c</members>
+        <name>CustomField</name>
     </types>
     <version>53.0</version>
 </Package>
