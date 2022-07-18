@@ -3,7 +3,6 @@ public with sharing class QueryChildToParent{
     //This method will query records from child to parent standard object
     public void onStandardObject(Integer size){
         List<Contact> listContact =  new List<Contact>();
-        Account recAccount = [Select Name From Account Where Name = 'Acme1' limit 1];
         
         //Inserting Records
         for(Integer i=1 ;i<=size; i++){
