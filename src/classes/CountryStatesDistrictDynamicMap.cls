@@ -116,11 +116,13 @@ public with sharing class CountryStatesDistrictDynamicMap {
         Country wrapCountry = new Country();
         wrapCountry.countryName = countryName;
         wrapCountry.states = new List<States>();
-        List<AggregateResult> listOfAggrStates = [SELECT COUNT(Name)	Total_States__c FROM State__c Where Country__r.Name like :countryName  Group By Country__r.Name];  
+        List<AggregateResult> listOfAggrStates = [SELECT COUNT(Name)	Total_States__c FROM State__c Where Country__r.Name like :countryName  
+                                                  Group By Country__r.Name];  
         
         wrapCountry.totalNumberOfStates =  (Decimal)listOfAggrStates[0].get('Total_States__c');
         
-        List<AggregateResult> listOfAggrDistricts = [SELECT COUNT(Name)Total_Districts__c FROM District__c Where State__r.Country__r.Name like :countryName Group By State__r.Country__r.Name];    
+        List<AggregateResult> listOfAggrDistricts = [SELECT COUNT(Name)Total_Districts__c FROM District__c Where State__r.Country__r.Name like :countryName 
+                                                    Group By State__r.Country__r.Name];    
         
         wrapCountry.totalNumberOfDistricts = (Decimal)listOfAggrDistricts[0].get('Total_Districts__c');
         
@@ -130,7 +132,8 @@ public with sharing class CountryStatesDistrictDynamicMap {
                 wrapSt.stateName = state;
                 wrapSt.districts = new list<Districts>();
                 
-                List<AggregateResult> listOfAggrDistrictState = [SELECT COUNT(Name)Total_Districts__c FROM District__c Where State__r.Country__r.Name like :countryName  Group By State__r.Name];
+                List<AggregateResult> listOfAggrDistrictState = [SELECT COUNT(Name)Total_Districts__c FROM District__c Where State__r.Country__r.Name like :countryName 
+                                                                Group By State__r.Name];
                 
                 wrapSt.totalNumberOfDistricts =(Decimal)listOfAggrDistrictState[0].get('Total_Districts__c');
                 
@@ -147,7 +150,8 @@ public with sharing class CountryStatesDistrictDynamicMap {
         }
         String json = JSON.serialize(wrapCountry);
         // Passing JSON Data to Country UI
-        List<Country__c> jsonData = [SELECT Id, Name, Country_JSON_Data__c, Total_Districts__c, Total_States__c FROM Country__c WHERE Name = :countryName LIMIT 1];
+        List<Country__c> jsonData = [SELECT Id, Name, Country_JSON_Data__c, Total_Districts__c, Total_States__c FROM Country__c 
+                                    WHERE Name = :countryName LIMIT 1];
         jsonData[0].Total_States__c = wrapCountry.totalNumberOfStates;
         jsonData[0].Total_Districts__c = wrapCountry.totalNumberOfDistricts;
         jsonData[0].Country_JSON_Data__c = json;
