@@ -11,6 +11,7 @@ public with sharing class CountryStatesDistrictDynamicMap {
         public List<States> states{get; set;}
         public Decimal totalNumberOfStates{get; set;}
         public Decimal totalNumberOfDistricts{get; set;}
+        public Decimal code{set;get;}
     }
     public class States {
         public string stateName{get; set;}
@@ -64,7 +65,9 @@ public with sharing class CountryStatesDistrictDynamicMap {
             //  Find out Country.State and District starts with a particular Keyword.         
             Map<String,Map<String,List<String>>> combinationOfCountryOfStateOfDistrict = new Map<String,Map<String,List<String>>>();
             
-            List<District__c> listOfCombinations = [SELECT Name, State__r.Name, State__r.Country__r.Name FROM District__c WHERE (Name LIKE :startWith + '%' AND State__r.Name LIKE :startWith + '%' AND State__r.Country__r.Name LIKE :startWith + '%')];
+            List<District__c> listOfCombinations = [SELECT Name, State__r.Name, State__r.Country__r.Name
+                                                   FROM District__c WHERE (Name LIKE :startWith + '%' AND State__r.Name LIKE :startWith + '%' AND 
+                                                   State__r.Country__r.Name LIKE :startWith + '%')];
             if(listOfCombinations.size()>0){
                 for(District__c district : listOfCombinations)
                 {
@@ -115,11 +118,11 @@ public with sharing class CountryStatesDistrictDynamicMap {
         wrapCountry.states = new List<States>();
         List<AggregateResult> listOfAggrStates = [SELECT COUNT(Name)	Total_States__c FROM State__c Where Country__r.Name like :countryName  Group By Country__r.Name];  
         
-        wrapCountry.totalNumberOfStates =  (Integer)listOfAggrStates[0].get('Total_States__c');
+        wrapCountry.totalNumberOfStates =  (Decimal)listOfAggrStates[0].get('Total_States__c');
         
         List<AggregateResult> listOfAggrDistricts = [SELECT COUNT(Name)Total_Districts__c FROM District__c Where State__r.Country__r.Name like :countryName Group By State__r.Country__r.Name];    
         
-        wrapCountry.totalNumberOfDistricts = (Integer)listOfAggrDistricts[0].get('Total_Districts__c');
+        wrapCountry.totalNumberOfDistricts = (Decimal)listOfAggrDistricts[0].get('Total_Districts__c');
         
         for(String state : mapOfCountriesStatesDistricts.get(countryName).keyset()) {
             if(state == stName) {
@@ -129,7 +132,7 @@ public with sharing class CountryStatesDistrictDynamicMap {
                 
                 List<AggregateResult> listOfAggrDistrictState = [SELECT COUNT(Name)Total_Districts__c FROM District__c Where State__r.Country__r.Name like :countryName  Group By State__r.Name];
                 
-                wrapSt.totalNumberOfDistricts =(Integer)listOfAggrDistrictState[0].get('Total_Districts__c');
+                wrapSt.totalNumberOfDistricts =(Decimal)listOfAggrDistrictState[0].get('Total_Districts__c');
                 
                 stateDistrictCount = wrapSt.totalNumberOfDistricts;
                 
